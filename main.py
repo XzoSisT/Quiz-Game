@@ -41,6 +41,12 @@ class QuizGame(App):
 
         if selected_option == correct_answer:
             self.score += 1
+        
+        self.show_popup("Result", f"Your current score: {self.score}")
+
+    def show_popup(self, title, content):
+        popup = Popup(title=title, content=Label(text=content), size_hint=(None, None), size=(400, 200))
+        popup.open()
 
 if __name__ == '__main__':
     QuizGame().run()
