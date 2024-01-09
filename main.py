@@ -18,10 +18,12 @@ class QuizGame(App):
         self.layout = BoxLayout(orientation='vertical', spacing=10)
         self.question_label = Label(text="")
         self.option_buttons = [Button(text="", on_press=self.check_answer) for _ in range(4)]
+        self.next_button = Button(text="Next Question", on_press=self.next_question)
 
         self.layout.add_widget(self.question_label)
         for button in self.option_buttons:
             self.layout.add_widget(button)
+        self.layout.add_widget(self.next_button)
 
         self.display_question()
 
@@ -43,6 +45,13 @@ class QuizGame(App):
             self.score += 1
         
         self.show_popup("Result", f"Your current score: {self.score}")
+
+    def next_question(self, instance):
+        if self.current_question_index < len(self.questions) - 1:
+            self.current_question_index += 1
+            self.display_question()
+        else:
+            self.show_popup("Game Over", f"Your final score: {self.score}")
 
     def show_popup(self, title, content):
         popup = Popup(title=title, content=Label(text=content), size_hint=(None, None), size=(400, 200))
