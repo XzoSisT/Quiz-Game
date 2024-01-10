@@ -10,7 +10,8 @@ class QuizGame(App):
         self.questions = [
             {"question": "2+2 = ?", "options": ["1", "2", "3", "4"], "answer": "4"},
             {"question": "5+4 = ?", "options": ["9", "3", "7", "4"], "answer": "9"},
-            {"question": "2+3 = ?", "options": ["5", "2", "3", "4"], "answer": "5"}
+            {"question": "2+3 = ?", "options": ["5", "2", "3", "4"], "answer": "5"},
+            {"question": "It can fly,It like blood and It born in water. What is it ?", "options": ["mosqitoe", "frog" , "ant" , "cat"], "answer": "mosqitoe"}
         ]
         self.current_question_index = 0
         self.score = 0
