@@ -12,7 +12,8 @@ class QuizGame(App):
             {"question": "5+4 = ?", "options": ["9", "3", "7", "4"], "answer": "9"},
             {"question": "2+3 = ?", "options": ["5", "2", "3", "4"], "answer": "5"},
             {"question": "It can fly,It like blood and It born in water. What is it ?", "options": ["mosqitoe", "frog" , "ant" , "cat"], "answer": "mosqitoe"},
-            {"question": "Can dragonfly fly ?", "options": ["yes,it can fly", "no, it can't", "unsure", "don't know"], "answer": "yes, it can fly"}
+            {"question": "Can dragonfly fly ?", "options": ["yes,it can fly", "no, it can't", "unsure", "don't know"], "answer": "yes, it can fly"},
+            {"question": "What region is Yala in ?", "options": ["North", "Mid", "South", "Northeastern"], "answer": "South"}
         ]
         self.current_question_index = 0
         self.score = 0
