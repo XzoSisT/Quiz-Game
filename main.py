@@ -17,7 +17,8 @@ class QuizGame(App):
             {"question": "What region is Yala in ?", "options": ["North", "Mid", "South", "Northeastern"], "answer": "South"},
             {"question": "18*99 = ?", "options": ["78", "996", "1789", "1782"], "answer":"1782"},
             {"question": "What is the capital city of France ?", "options": ["Berlin", "London", "Paris", "Madrid"], "answer":"Paris"},
-            {"question": "Which planet is known as the Red Planet ?", "options": ["Venus", "Mars", "Jupiter", "Saturn"], "answer":"Mars"}
+            {"question": "Which planet is known as the Red Planet ?", "options": ["Venus", "Mars", "Jupiter", "Saturn"], "answer":"Mars"},
+            {"question": "Who wrote 'Romeo and Juliet ?", "options": ["Charles Dickens", "William Shakespeare", "Jane Austen", "Mark Twain"], "answer":"William Shakespeare"}
         ]
         self.current_question_index = 0
         self.score = 0
