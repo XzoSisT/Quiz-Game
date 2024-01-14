@@ -48,6 +48,17 @@ class QuizGame(App):
 
         self.display_question()
 
+        self.layout.background_color = (0.9, 0.9, 0.9, 1)
+        self.question_label.font_size = '24sp'
+        for button in self.option_buttons:
+            button.font_size = '20sp'
+            button.background_normal = 'button_normal.png'
+            button.background_down = 'button_down.png'
+
+        self.layout.padding = [20, 50]
+        self.button_layout.size_hint_y = None
+        self.button_layout.height = '44dp'
+
         return self.layout
 
     def display_question(self):
