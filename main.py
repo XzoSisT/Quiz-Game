@@ -20,7 +20,17 @@ class QuizGame(App):
             {"question": "18*99 = ?", "options": ["78", "996", "1789", "1782"], "answer":"1782"},
             {"question": "What is the capital city of France ?", "options": ["Berlin", "London", "Paris", "Madrid"], "answer":"Paris"},
             {"question": "Which planet is known as the Red Planet ?", "options": ["Venus", "Mars", "Jupiter", "Saturn"], "answer":"Mars"},
-            {"question": "Who wrote 'Romeo and Juliet ?", "options": ["Charles Dickens", "William Shakespeare", "Jane Austen", "Mark Twain"], "answer":"William Shakespeare"}
+            {"question": "Who wrote 'Romeo and Juliet ?", "options": ["Charles Dickens", "William Shakespeare", "Jane Austen", "Mark Twain"], "answer":"William Shakespeare"},
+            {"question": "What is the largest mammal on Earth?", "options": ["Elephant", "Blue Whale", "Giraffe", "Gorilla"], "answer": "Blue Whale"},
+            {"question": "Which element has the chemical symbol 'O'?", "options": ["Oxygen", "Gold", "Silver", "Iron"], "answer": "Oxygen"},
+            {"question": "In what year did World War II end?", "options": ["1939", "1943", "1945", "1950"], "answer": "1945"},
+            {"question": "Who painted the Mona Lisa?", "options": ["Leonardo da Vinci", "Vincent van Gogh", "Pablo Picasso", "Claude Monet"], "answer": "Leonardo da Vinci"},
+            {"question": "What is the currency of Japan?", "options": ["Dollar", "Euro", "Yuan", "Yen"], "answer": "Yen"},
+            {"question": "How many continents are there on Earth?", "options": ["5", "6", "7", "8"], "answer": "7"},
+            {"question": "What is the largest ocean?", "options": ["Atlantic Ocean", "Indian Ocean", "Southern Ocean", "Pacific Ocean"], "answer": "Pacific Ocean"},
+            {"question": "Who is known as the 'Father of Computer Science'?", "options": ["Alan Turing", "Bill Gates", "Steve Jobs", "Tim Berners-Lee"], "answer": "Alan Turing"},
+            {"question": "Which country is known as the 'Land of the Rising Sun'?", "options": ["China", "South Korea", "Japan", "Vietnam"], "answer": "Japan"},
+            {"question": "What is the square root of 81?", "options": ["7", "9", "10", "12"], "answer": "9"}
         ]
         self.current_question_index = 0
         self.score = 0
