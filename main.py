@@ -13,7 +13,7 @@ class QuizGame(App):
             {"question": "5+4 = ?", "options": ["9", "3", "7", "4"], "answer": "9"},
             {"question": "2+3 = ?", "options": ["5", "2", "3", "4"], "answer": "5"},
             {"question": "It can fly,It like blood and It born in water. What is it ?", "options": ["mosqitoe", "frog" , "ant" , "cat"], "answer": "mosqitoe"},
-            {"question": "Can dragonfly fly ?", "options": ["yes,it can fly", "no, it can't", "unsure", "don't know"], "answer": "yes, it can fly"},
+            {"question": "Can dragonfly fly ?", "options": ["yes, it can fly", "no, it can't", "unsure", "don't know"], "answer": "yes, it can fly"},
             {"question": "What region is Yala in ?", "options": ["North", "Mid", "South", "Northeastern"], "answer": "South"},
             {"question": "18*99 = ?", "options": ["78", "996", "1789", "1782"], "answer":"1782"}
         ]
@@ -52,12 +52,16 @@ class QuizGame(App):
         for button, option in zip(self.option_buttons, options):
             button.text = option
 
+        for button in self.option_buttons:
+            button.disabled = False
+
     def check_answer(self, instance):
         selected_option = instance.text
         correct_answer = self.questions[self.current_question_index]["answer"]
 
         if selected_option == correct_answer:
             self.score += 1
+            instance.disabled = True
         
         self.show_popup("Result", f"Your current score: {self.score}")
 
