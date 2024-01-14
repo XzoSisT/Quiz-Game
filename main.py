@@ -40,7 +40,17 @@ class QuizGame(App):
             {"question": "Who painted 'Starry Night'?", "options": ["Pablo Picasso", "Vincent van Gogh", "Claude Monet", "Edvard Munch"], "answer": "Vincent van Gogh"},
             {"question": "What is the speed of light?", "options": ["300,000 km/s", "500,000 km/s", "700,000 km/s", "1,000,000 km/s"], "answer": "300,000 km/s"},
             {"question": "In which year did the Titanic sink?", "options": ["1905", "1912", "1920", "1931"], "answer": "1912"},
-            {"question": "Who is the author of '1984'?", "options": ["George Orwell", "Aldous Huxley", "Ray Bradbury", "Philip K. Dick"], "answer": "George Orwell"}
+            {"question": "Who is the author of '1984'?", "options": ["George Orwell", "Aldous Huxley", "Ray Bradbury", "Philip K. Dick"], "answer": "George Orwell"},
+            {"question": "What is the smallest prime number?", "options": ["0", "1", "2", "3"], "answer": "2"},
+            {"question": "Who discovered gravity?", "options": ["Albert Einstein", "Isaac Newton", "Galileo Galilei", "Johannes Kepler"], "answer": "Isaac Newton"},
+            {"question": "What is the capital of Brazil?", "options": ["Rio de Janeiro", "Brasília", "São Paulo", "Salvador"], "answer": "Brasília"},
+            {"question": "Who invented the telephone?", "options": ["Thomas Edison", "Alexander Graham Bell", "Nikola Tesla", "Guglielmo Marconi"], "answer": "Alexander Graham Bell"},
+            {"question": "What is the largest bird in the world?", "options": ["Eagle", "Ostrich", "Penguin", "Albatross"], "answer": "Ostrich"},
+            {"question": "In what year did the Berlin Wall fall?", "options": ["1985", "1989", "1991", "1995"], "answer": "1989"},
+            {"question": "Who composed 'Moonlight Sonata'?", "options": ["Ludwig van Beethoven", "Wolfgang Amadeus Mozart", "Johann Sebastian Bach", "Franz Schubert"], "answer": "Ludwig van Beethoven"},
+            {"question": "What is the boiling point of water in Celsius?", "options": ["0°C", "50°C", "100°C", "150°C"], "answer": "100°C"},
+            {"question": "Who was the first woman to win a Nobel Prize?", "options": ["Marie Curie", "Mother Teresa", "Rosalind Franklin", "Dorothy Crowfoot Hodgkin"], "answer": "Marie Curie"},
+            {"question": "What is the largest fish in the world?", "options": ["Tuna", "Shark", "Whale Shark", "Salmon"], "answer": "Whale Shark"}
         ]
         self.current_question_index = 0
         self.score = 0
