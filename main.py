@@ -30,6 +30,7 @@ class QuizGame(App):
         self.total_time = 0
         self.menu_button = Button(text="Menu", on_press=self.show_menu, background_color=(0.7, 0.7, 0.7, 1))
         self.menu_popup = None
+        self.attempts_left = 5
        
         self.button_layout = BoxLayout(orientation='horizontal', spacing=10)
         self.button_layout.add_widget(self.menu_button)
@@ -67,6 +68,11 @@ class QuizGame(App):
         if selected_option == correct_answer:
             self.score += 1
             instance.disabled = True
+        else:
+            self.attempts_left -= 1
+            if self.attempts_left == 0:
+                self.show_popup("Game Over", f"You're out of attempts! Your final score: {self.score}")
+                self.reset_game()
         
         self.show_popup("Result", f"Your current score: {self.score}")
 
@@ -102,6 +108,7 @@ class QuizGame(App):
     def reset_game(self):
         self.current_question_index = 0
         self.score = 0
+        self.attempts_left = 5
         self.total_time = 0
         self.display_question()
     
