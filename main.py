@@ -24,9 +24,12 @@ class QuizGame(App):
         self.layout.bind(size=self._update_background)
         self.question_label = Label(text="")
         self.option_buttons = [Button(text="", on_press=self.check_answer, background_color=(0.6, 0.6, 0.9, 1)) for _ in range(4)]
+        self.button_layout = BoxLayout(orientation='horizontal', spacing=10)
         self.next_button = Button(text="Next Question", on_press=self.next_question, background_color=(0.5, 0.8, 0.5, 1))
-        self.back_button = Button(text="Back to Previous Question", on_press=self.previous_question, background_color=(0.9, 0.6, 0.6, 1))
-        self.layout.add_widget(self.back_button)
+        self.back_button = Button(text="Previous Question", on_press=self.previous_question, background_color=(0.9, 0.6, 0.6, 1))
+        
+        self.button_layout.add_widget(self.back_button)
+        self.button_layout.add_widget(self.next_button)
 
         with self.layout.canvas.before:
             Color(0.8, 0.8, 0.8, 1)
@@ -35,7 +38,7 @@ class QuizGame(App):
         self.layout.add_widget(self.question_label)
         for button in self.option_buttons:
             self.layout.add_widget(button)
-        self.layout.add_widget(self.next_button)
+        self.layout.add_widget(self.button_layout)
 
         self.display_question()
 
