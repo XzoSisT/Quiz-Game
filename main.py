@@ -5,6 +5,7 @@ from kivy.uix.button import Button
 from kivy.graphics import Color, Rectangle
 from kivy.uix.popup import Popup
 from kivy.core.audio import SoundLoader
+from kivy.clock import Clock
 import random
 
 class QuizGame(App):
@@ -39,6 +40,8 @@ class QuizGame(App):
         self.layout.add_widget(self.question_number_label)
         self.sound_correct = SoundLoader.load('correct-2-46134.mp3')  
         self.sound_wrong = SoundLoader.load('negative_beeps-6008.mp3')
+        self.music = SoundLoader.load('gamemusic-6082.mp3')
+        self.music.loop = True
        
         self.button_layout = BoxLayout(orientation='horizontal', spacing=10)
         self.button_layout.add_widget(self.menu_button)
@@ -54,6 +57,7 @@ class QuizGame(App):
             self.layout.add_widget(button)
         self.layout.add_widget(self.button_layout)
 
+        self.start_music()
         self.display_question()
 
         self.layout.background_color = (0.9, 0.9, 0.9, 1)
@@ -69,6 +73,14 @@ class QuizGame(App):
 
         return self.layout
 
+    def start_music(self):
+        if self.music:
+            self.music.play()
+
+    def stop_music(self):
+        if self.music:
+            self.music.stop()
+    
     def display_question(self):
         question_data = self.questions[self.current_question_index]
         self.question_label.text = question_data["question"]
@@ -124,6 +136,7 @@ class QuizGame(App):
         self.reset_game()
 
     def exit_game(self, instance):
+        self.stop_music()
         App.get_running_app().stop()
 
     def dismiss_menu(self):
@@ -135,6 +148,7 @@ class QuizGame(App):
         self.attempts_left = 5
         self.total_time = 0
         self.display_question()
+        self.start_music()
     
     def next_question(self, instance):
         if self.current_question_index < len(self.questions) - 1:
