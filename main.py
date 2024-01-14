@@ -16,7 +16,8 @@ class QuizGame(App):
             {"question": "Can dragonfly fly ?", "options": ["yes, it can fly", "no, it can't", "unsure", "don't know"], "answer": "yes, it can fly"},
             {"question": "What region is Yala in ?", "options": ["North", "Mid", "South", "Northeastern"], "answer": "South"},
             {"question": "18*99 = ?", "options": ["78", "996", "1789", "1782"], "answer":"1782"},
-            {"question": "What is the capital city of France ?", "options": ["Berlin", "London", "Paris", "Madrid"], "answer":"Paris"}
+            {"question": "What is the capital city of France ?", "options": ["Berlin", "London", "Paris", "Madrid"], "answer":"Paris"},
+            {"question": "Which planet is known as the Red Planet ?", "options": ["Venus", "Mars", "Jupiter", "Saturn"], "answer":"Mars"}
         ]
         self.current_question_index = 0
         self.score = 0
