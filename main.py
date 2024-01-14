@@ -4,6 +4,7 @@ from kivy.uix.label import Label
 from kivy.uix.button import Button
 from kivy.graphics import Color, Rectangle
 from kivy.uix.popup import Popup
+from kivy.core.audio import SoundLoader
 import random
 
 class QuizGame(App):
@@ -36,6 +37,8 @@ class QuizGame(App):
         self.attempts_left = 5
         self.question_number_label = Label(text="", color=(0, 0, 0, 1))
         self.layout.add_widget(self.question_number_label)
+        self.sound_correct = SoundLoader.load('correct-2-46134.mp3')  
+        self.sound_wrong = SoundLoader.load('negative_beeps-6008.mp3')
        
         self.button_layout = BoxLayout(orientation='horizontal', spacing=10)
         self.button_layout.add_widget(self.menu_button)
@@ -86,11 +89,14 @@ class QuizGame(App):
         if selected_option == correct_answer:
             self.score += 1
             instance.disabled = True
+            self.sound_correct.play()
         else:
             self.attempts_left -= 1
             if self.attempts_left == 0:
+                self.sound_wrong.play()
                 self.show_popup("Game Over", f"You're out of attempts! Your final score: {self.score}")
                 self.reset_game()
+            self.sound_wrong.play()
         
         self.show_popup("Result", f"Your current score: {self.score}")
 
