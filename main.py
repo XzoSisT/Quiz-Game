@@ -30,7 +30,17 @@ class QuizGame(App):
             {"question": "What is the largest ocean?", "options": ["Atlantic Ocean", "Indian Ocean", "Southern Ocean", "Pacific Ocean"], "answer": "Pacific Ocean"},
             {"question": "Who is known as the 'Father of Computer Science'?", "options": ["Alan Turing", "Bill Gates", "Steve Jobs", "Tim Berners-Lee"], "answer": "Alan Turing"},
             {"question": "Which country is known as the 'Land of the Rising Sun'?", "options": ["China", "South Korea", "Japan", "Vietnam"], "answer": "Japan"},
-            {"question": "What is the square root of 81?", "options": ["7", "9", "10", "12"], "answer": "9"}
+            {"question": "What is the square root of 81?", "options": ["7", "9", "10", "12"], "answer": "9"},
+            {"question": "Which gas do plants absorb during photosynthesis?", "options": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Methane"], "answer": "Carbon Dioxide"},
+            {"question": "Who wrote 'To Kill a Mockingbird'?", "options": ["J.K. Rowling", "Harper Lee", "George Orwell", "Mark Twain"], "answer": "Harper Lee"},
+            {"question": "What is the largest desert in the world?", "options": ["Gobi Desert", "Arabian Desert", "Sahara Desert", "Karakum Desert"], "answer": "Sahara Desert"},
+            {"question": "Who discovered penicillin?", "options": ["Marie Curie", "Alexander Fleming", "Louis Pasteur", "Joseph Lister"], "answer": "Alexander Fleming"},
+            {"question": "Which planet is known as the 'Blue Planet'?", "options": ["Earth", "Uranus", "Neptune", "Jupiter"], "answer": "Earth"},
+            {"question": "What is the capital of Australia?", "options": ["Sydney", "Melbourne", "Canberra", "Brisbane"], "answer": "Canberra"},
+            {"question": "Who painted 'Starry Night'?", "options": ["Pablo Picasso", "Vincent van Gogh", "Claude Monet", "Edvard Munch"], "answer": "Vincent van Gogh"},
+            {"question": "What is the speed of light?", "options": ["300,000 km/s", "500,000 km/s", "700,000 km/s", "1,000,000 km/s"], "answer": "300,000 km/s"},
+            {"question": "In which year did the Titanic sink?", "options": ["1905", "1912", "1920", "1931"], "answer": "1912"},
+            {"question": "Who is the author of '1984'?", "options": ["George Orwell", "Aldous Huxley", "Ray Bradbury", "Philip K. Dick"], "answer": "George Orwell"}
         ]
         self.current_question_index = 0
         self.score = 0
