@@ -22,7 +22,7 @@ class QuizGame(App):
 
         self.layout = BoxLayout(orientation='vertical', spacing=10)
         self.layout.bind(size=self._update_background)
-        self.question_label = Label(text="")
+        self.question_label = Label(text="", color=(0, 0, 0, 1))
         self.option_buttons = [Button(text="", on_press=self.check_answer, background_color=(0.6, 0.6, 0.9, 1)) for _ in range(4)]
         self.button_layout = BoxLayout(orientation='horizontal', spacing=10)
         self.next_button = Button(text="Next Question", on_press=self.next_question, background_color=(0.5, 0.8, 0.5, 1))
