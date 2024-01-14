@@ -34,6 +34,8 @@ class QuizGame(App):
         self.menu_button = Button(text="Menu", on_press=self.show_menu, background_color=(0.7, 0.7, 0.7, 1))
         self.menu_popup = None
         self.attempts_left = 5
+        self.question_number_label = Label(text="", color=(0, 0, 0, 1))
+        self.layout.add_widget(self.question_number_label)
        
         self.button_layout = BoxLayout(orientation='horizontal', spacing=10)
         self.button_layout.add_widget(self.menu_button)
@@ -74,6 +76,8 @@ class QuizGame(App):
 
         for button in self.option_buttons:
             button.disabled = False
+
+        self.question_number_label.text = f"Question {self.current_question_index + 1}/{len(self.questions)}"
 
     def check_answer(self, instance):
         selected_option = instance.text
@@ -130,8 +134,10 @@ class QuizGame(App):
         if self.current_question_index < len(self.questions) - 1:
             self.current_question_index += 1
             self.display_question()
+            self.question_number_label.text = f"Question {self.current_question_index + 1}/{len(self.questions)}"
         else:
             self.show_popup("Game Over", f"Your final score: {self.score}")
+            self.next_button.disabled = True
 
     def previous_question(self, instance):
         if self.current_question_index > 0:
