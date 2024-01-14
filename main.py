@@ -50,7 +50,16 @@ class QuizGame(App):
             {"question": "Who composed 'Moonlight Sonata'?", "options": ["Ludwig van Beethoven", "Wolfgang Amadeus Mozart", "Johann Sebastian Bach", "Franz Schubert"], "answer": "Ludwig van Beethoven"},
             {"question": "What is the boiling point of water in Celsius?", "options": ["0°C", "50°C", "100°C", "150°C"], "answer": "100°C"},
             {"question": "Who was the first woman to win a Nobel Prize?", "options": ["Marie Curie", "Mother Teresa", "Rosalind Franklin", "Dorothy Crowfoot Hodgkin"], "answer": "Marie Curie"},
-            {"question": "What is the largest fish in the world?", "options": ["Tuna", "Shark", "Whale Shark", "Salmon"], "answer": "Whale Shark"}
+            {"question": "What is the largest fish in the world?", "options": ["Tuna", "Shark", "Whale Shark", "Salmon"], "answer": "Whale Shark"},
+            {"question": "In what year did the Apollo 11 mission land on the moon?", "options": ["1961", "1969", "1975", "1980"], "answer": "1969"},
+            {"question": "Who wrote 'The Great Gatsby'?", "options": ["Ernest Hemingway", "F. Scott Fitzgerald", "J.D. Salinger", "John Steinbeck"], "answer": "F. Scott Fitzgerald"},
+            {"question": "What is the largest flower in the world?", "options": ["Sunflower", "Rose", "Orchid", "Rafflesia"], "answer": "Rafflesia"},
+            {"question": "Who is known as the 'Queen of Pop'?", "options": ["Madonna", "Beyoncé", "Lady Gaga", "Katy Perry"], "answer": "Madonna"},
+            {"question": "What is the speed of sound?", "options": ["300 m/s", "500 m/s", "700 m/s", "1,000 m/s"], "answer": "343 m/s"},
+            {"question": "Who wrote 'The Catcher in the Rye'?", "options": ["J.D. Salinger", "Ernest Hemingway", "F. Scott Fitzgerald", "John Steinbeck"], "answer": "J.D. Salinger"},
+            {"question": "What is the capital of South Africa?", "options": ["Cape Town", "Durban", "Johannesburg", "Pretoria"], "answer": "Pretoria"},
+            {"question": "What is the largest planet in our solar system?", "options": ["Earth", "Mars", "Jupiter", "Saturn"], "answer": "Jupiter"},
+            {"question": "Who is the author of 'The Lord of the Rings' trilogy?", "options": ["J.K. Rowling", "J.R.R. Tolkien", "George R.R. Martin", "C.S. Lewis"], "answer": "J.R.R. Tolkien"}
         ]
         self.current_question_index = 0
         self.score = 0
