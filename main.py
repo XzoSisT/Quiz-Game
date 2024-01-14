@@ -25,6 +25,8 @@ class QuizGame(App):
         self.question_label = Label(text="")
         self.option_buttons = [Button(text="", on_press=self.check_answer, background_color=(0.6, 0.6, 0.9, 1)) for _ in range(4)]
         self.next_button = Button(text="Next Question", on_press=self.next_question, background_color=(0.5, 0.8, 0.5, 1))
+        self.back_button = Button(text="Back to Previous Question", on_press=self.previous_question, background_color=(0.9, 0.6, 0.6, 1))
+        self.layout.add_widget(self.back_button)
 
         with self.layout.canvas.before:
             Color(0.8, 0.8, 0.8, 1)
@@ -62,6 +64,11 @@ class QuizGame(App):
             self.display_question()
         else:
             self.show_popup("Game Over", f"Your final score: {self.score}")
+
+    def previous_question(self, instance):
+        if self.current_question_index > 0:
+            self.current_question_index -= 1
+            self.display_question()
 
     def _update_background(self, instance, value):
         self.bg_rect.size = instance.size
