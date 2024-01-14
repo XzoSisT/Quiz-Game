@@ -2,6 +2,7 @@ from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.label import Label
 from kivy.uix.button import Button
+from kivy.graphics import Color, Rectangle
 from kivy.uix.popup import Popup
 import random
 
@@ -20,9 +21,14 @@ class QuizGame(App):
         self.score = 0
 
         self.layout = BoxLayout(orientation='vertical', spacing=10)
+        self.layout.bind(size=self._update_background)
         self.question_label = Label(text="")
         self.option_buttons = [Button(text="", on_press=self.check_answer) for _ in range(4)]
         self.next_button = Button(text="Next Question", on_press=self.next_question)
+
+        with self.layout.canvas.before:
+            Color(0.8, 0.8, 0.8, 1)
+            self.bg_rect = Rectangle(size=self.layout.size, pos=self.layout.pos)
 
         self.layout.add_widget(self.question_label)
         for button in self.option_buttons:
@@ -56,6 +62,10 @@ class QuizGame(App):
             self.display_question()
         else:
             self.show_popup("Game Over", f"Your final score: {self.score}")
+
+    def _update_background(self, instance, value):
+        self.bg_rect.size = instance.size
+        self.bg_rect.pos = instance.pos
 
     def show_popup(self, title, content):
         popup = Popup(title=title, content=Label(text=content), size_hint=(None, None), size=(400, 200))
