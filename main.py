@@ -72,6 +72,9 @@ class QuizGame(App):
         self.sound_wrong = SoundLoader.load('negative_beeps-6008.mp3')
         self.music = SoundLoader.load('gamemusic-6082.mp3')
         self.music.loop = True
+        self.total_questions = len(self.questions)
+        self.questions_per_round = 10
+        self.questions_in_current_round = []
        
         self.button_layout = BoxLayout(orientation='horizontal', spacing=10)
         self.button_layout.add_widget(self.menu_button)
@@ -88,6 +91,7 @@ class QuizGame(App):
         self.layout.add_widget(self.button_layout)
 
         self.start_music()
+        self.display_question_set()
         self.display_question()
 
         self.layout.background_color = (0.9, 0.9, 0.9, 1)
@@ -112,7 +116,12 @@ class QuizGame(App):
             self.music.stop()
     
     def display_question(self):
-        question_data = self.questions[self.current_question_index]
+        if not self.questions_in_current_round or self.current_question_index >= len(self.questions_in_current_round):
+            self.show_popup("Game Over", f"Your final score: {self.score}")
+            self.reset_game()
+            return
+
+        question_data = self.questions_in_current_round[self.current_question_index]
         self.question_label.text = question_data["question"]
         options = random.sample(question_data["options"], len(question_data["options"]))
 
@@ -122,11 +131,12 @@ class QuizGame(App):
         for button in self.option_buttons:
             button.disabled = False
 
-        self.question_number_label.text = f"Question {self.current_question_index + 1}/{len(self.questions)}"
+        self.question_number_label.text = f"Question {self.current_question_index + 1}/{len(self.questions_in_current_round)}"
+
 
     def check_answer(self, instance):
         selected_option = instance.text
-        correct_answer = self.questions[self.current_question_index]["answer"]
+        correct_answer = self.questions_in_current_round[self.current_question_index]["answer"]
 
         if selected_option == correct_answer:
             self.score += 1
@@ -177,14 +187,20 @@ class QuizGame(App):
         self.score = 0
         self.attempts_left = 5
         self.total_time = 0
-        self.display_question()
+        self.display_question_set()
         self.start_music()
+        self.display_question_set()
+
+    def display_question_set(self):
+        self.questions_in_current_round = random.sample(self.questions, self.questions_per_round)
+        self.current_question_index = 0
+        self.display_question()
     
     def next_question(self, instance):
-        if self.current_question_index < len(self.questions) - 1:
+        if self.current_question_index < len(self.questions_in_current_round) - 1:
             self.current_question_index += 1
             self.display_question()
-            self.question_number_label.text = f"Question {self.current_question_index + 1}/{len(self.questions)}"
+            self.question_number_label.text = f"Question {self.current_question_index + 1}/{len(self.questions_in_current_round)}"
         else:
             self.show_popup("Game Over", f"Your final score: {self.score}")
             self.next_button.disabled = True
