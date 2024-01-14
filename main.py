@@ -58,6 +58,7 @@ class QuizGame(App):
             {"question": "What is the speed of sound?", "options": ["300 m/s", "500 m/s", "700 m/s", "1,000 m/s"], "answer": "343 m/s"},
             {"question": "Who wrote 'The Catcher in the Rye'?", "options": ["J.D. Salinger", "Ernest Hemingway", "F. Scott Fitzgerald", "John Steinbeck"], "answer": "J.D. Salinger"},
             {"question": "What is the capital of South Africa?", "options": ["Cape Town", "Durban", "Johannesburg", "Pretoria"], "answer": "Pretoria"},
+            {"question": "Who painted 'The Persistence of Memory'?", "options": ["Salvador Dalí", "Pablo Picasso", "Vincent van Gogh", "Claude Monet"], "answer": "Salvador Dalí"},
             {"question": "What is the largest planet in our solar system?", "options": ["Earth", "Mars", "Jupiter", "Saturn"], "answer": "Jupiter"},
             {"question": "Who is the author of 'The Lord of the Rings' trilogy?", "options": ["J.K. Rowling", "J.R.R. Tolkien", "George R.R. Martin", "C.S. Lewis"], "answer": "J.R.R. Tolkien"}
         ]
